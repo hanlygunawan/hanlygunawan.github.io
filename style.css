@@ -1,0 +1,71 @@
+section {
+  padding-top: 5rem;
+}
+
+.overlay {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 9999;
+  transition: 1s;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.overlay:target {
+  width: auto;
+  height: auto;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.overlay img {
+  max-height: 100%;
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.5);
+}
+
+.overlay:target img {
+  animation: fade 1s;
+  border-radius: 0;
+}
+
+.overlay .close {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  margin-left: -20px;
+  padding: 1px;
+  opacity: 0;
+}
+
+.overlay:target .close {
+  animation: slideDownFade 0.5s 0.5s forwards;
+}
+
+/* animasi */
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDownFade {
+  0% {
+    opacity: 0;
+    margin-top: -20px;
+  }
+
+  100% {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
